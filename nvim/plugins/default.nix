@@ -24,6 +24,7 @@
     ./snacks.nix
     ./todo-comments.nix
     ./toggleterm.nix
+    ./transparent.nix
     ./undotree.nix
     ./vim-indent-object.nix
     ./web-devicons.nix
