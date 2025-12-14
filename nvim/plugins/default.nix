@@ -7,6 +7,7 @@
     ./lsp
     ./treesitter
 
+    ./sidekick.nix
     ./conform.nix
     ./barbar.nix
     ./better-escape.nix
