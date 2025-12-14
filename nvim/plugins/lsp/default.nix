@@ -56,7 +56,10 @@
           package = pkgs.ansible-language-server;
         };
         docker_compose_language_service.enable = true;
-        dockerls.enable = true;
+        dockerls = {
+          enable = true;
+          package = pkgs.dockerfile-language-server-nodejs;
+        };
         jsonls.enable = true;
         terraformls.enable = true;
         tflint.enable = true;
