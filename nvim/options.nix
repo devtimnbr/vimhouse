@@ -12,7 +12,7 @@
       o.backup = false
       o.confirm = true -- get confirmation prompt on exit
       o.mouse = "" -- fkin stop registering touchpad
-      o.shortmess:append "sI" -- disable nvim intro
+      o.shortmess:append "s" -- nvim intro enabled
       o.swapfile = false
       o.termguicolors = true
       o.timeoutlen = 400

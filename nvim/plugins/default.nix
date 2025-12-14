@@ -16,6 +16,7 @@
     ./lualine.nix
     ./markdown-preview.nix
     ./mini-nvim.nix
+    # ./dashboard.nix
     ./noice.nix
     ./nvim-autopairs.nix
     ./nvim-comment.nix
