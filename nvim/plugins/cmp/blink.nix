@@ -10,6 +10,7 @@
     blink-cmp-git.enable = true;
     blink-compat.enable = true;
     blink-emoji.enable = true;
+    blink-cmp-copilot.enable = true;
 
     blink-cmp = {
       enable = true;
@@ -65,6 +66,7 @@
         };
         sources = {
           default = [
+            "copilot"
             "buffer"
             "calc"
             "emoji"
@@ -74,6 +76,12 @@
             "snippets"
           ];
           providers = {
+            copilot = {
+              name = "copilot";
+              module = "blink-cmp-copilot";
+              score_offset = 1000;
+              async = true;
+            };
             lsp.score_offset = 4;
             buffer = {
               opts = {
