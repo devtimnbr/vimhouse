@@ -2,6 +2,11 @@
 
   plugins.lazygit = {
     enable = true;
+    settings = {
+      keymaps = {
+        quit = "q";
+      };
+    };
   };
 
   keymaps = [
