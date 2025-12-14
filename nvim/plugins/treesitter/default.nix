@@ -2,8 +2,6 @@
 {
 
   imports = [
-    # ./nushell.nix
-    ./rainbow-delimiters.nix
     ./textobjects.nix
   ];
 
