@@ -45,32 +45,34 @@
   };
 
   extraConfigLuaPost = ''
-    local colors = vim.g.colors_name == "gruvbox" and {
-      dark0 = "#1d2021",
-      dark1 = "#3c3836",
-      dark2 = "#504945",
-      dark3 = "#665c54",
-      dark4 = "#7c6f64",
-      light0 = "#fbf1c7",
-      light1 = "#ebdbb2",
-      light2 = "#d5c4a1",
-      light3 = "#bdae93",
-      light4 = "#a89984",
-      bright_red = "#fb4934",
-      bright_green = "#b8bb26",
-      bright_yellow = "#fabd2f",
-      bright_blue = "#83a598",
-      bright_purple = "#d3869b",
-      bright_aqua = "#8ec07c",
-      bright_orange = "#fe8019",
-      neutral_red = "#cc241d",
-      neutral_green = "#98971a",
-      neutral_yellow = "#d79921",
-      neutral_blue = "#458588",
-      neutral_purple = "#b16286",
-      neutral_aqua = "#689d6a",
-      neutral_orange = "#d65d0e",
-    } or {}
+    local colors = vim.g.colors_name == "gruvbox"
+        and {
+          dark0 = "#1d2021",
+          dark1 = "#3c3836",
+          dark2 = "#504945",
+          dark3 = "#665c54",
+          dark4 = "#7c6f64",
+          light0 = "#fbf1c7",
+          light1 = "#ebdbb2",
+          light2 = "#d5c4a1",
+          light3 = "#bdae93",
+          light4 = "#a89984",
+          bright_red = "#fb4934",
+          bright_green = "#b8bb26",
+          bright_yellow = "#fabd2f",
+          bright_blue = "#83a598",
+          bright_purple = "#d3869b",
+          bright_aqua = "#8ec07c",
+          bright_orange = "#fe8019",
+          neutral_red = "#cc241d",
+          neutral_green = "#98971a",
+          neutral_yellow = "#d79921",
+          neutral_blue = "#458588",
+          neutral_purple = "#b16286",
+          neutral_aqua = "#689d6a",
+          neutral_orange = "#d65d0e",
+        }
+      or {}
 
     local PickerColor = {
       SnacksPickerBox = { bg = colors.dark0 or "#1d2021" },
@@ -95,7 +97,7 @@
     -- find - using leader s
     map("n", "<leader><leader>", "<Cmd>lua Snacks.picker.smart()<CR>", { desc = "Find Files" })
     map("n", "<leader>uC", function()
-      Snacks.picker.colorschemes({
+      Snacks.picker.colorschemes {
         preset = "vertical",
         confirm = function(picker, item)
           picker:close()
@@ -105,11 +107,11 @@
             vim.schedule(function()
               vim.cmd("colorscheme " .. item.text)
               -- Save the colorscheme preference
-              vim.fn.writefile({item.text}, vim.fn.expand("~/.config/nixvim-colorscheme"))
+              vim.fn.writefile({ item.text }, vim.fn.expand "~/.config/nixvim-colorscheme")
             end)
           end
-        end
-      })
+        end,
+      }
     end, { desc = "Colorschemes" })
     map("n", "<leader>sf", "<Cmd>lua Snacks.picker.smart()<CR>", { desc = "Files" })
     map("n", "<leader>sr", "<Cmd>lua Snacks.picker.recent()<CR>", { desc = "Recent files" })
@@ -129,11 +131,11 @@
     map("n", "<leader>sc", "<Cmd>lua Snacks.picker.command_history()<CR>", { desc = "Command history" })
 
     -- git under leader sg
-    map("n", "<leader>sgc", "<Cmd>lua Snacks.picker.git_log_file()<CR>", { desc = "Git commits (buffer)" })
-    map("n", "<leader>sgC", "<Cmd>lua Snacks.picker.git_log()<CR>", { desc = "Git commit" })
-    map("n", "<leader>sgs", "<Cmd>lua Snacks.picker.git_status()<CR>", { desc = "Git status" })
-    map("n", "<leader>sgS", "<Cmd>lua Snacks.picker.git_stash()<CR>", { desc = "Git stash" })
-    map("n", "<leader>sgb", "<Cmd>lua Snacks.picker.git_branches()<CR>", { desc = "Git branches" })
+    -- map("n", "<leader>sgc", "<Cmd>lua Snacks.picker.git_log_file()<CR>", { desc = "Git commits (buffer)" })
+    -- map("n", "<leader>sgC", "<Cmd>lua Snacks.picker.git_log()<CR>", { desc = "Git commit" })
+    -- map("n", "<leader>sgs", "<Cmd>lua Snacks.picker.git_status()<CR>", { desc = "Git status" })
+    -- map("n", "<leader>sgS", "<Cmd>lua Snacks.picker.git_stash()<CR>", { desc = "Git stash" })
+    -- map("n", "<leader>sgb", "<Cmd>lua Snacks.picker.git_branches()<CR>", { desc = "Git branches" })
 
     Snacks.toggle.option("spell", { name = "Spelling" }):map "<leader>ts"
     Snacks.toggle.option("wrap", { name = "Wrap" }):map "<leader>tw"

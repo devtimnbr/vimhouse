@@ -42,7 +42,12 @@
       };
     }
     {
-      mode = [ "n" "t" "i" "x" ];
+      mode = [
+        "n"
+        "t"
+        "i"
+        "x"
+      ];
       key = "<C-.>";
       action.__raw = ''function() require("sidekick").toggle() end'';
       options.desc = "Sidekick Toggle";
@@ -66,13 +71,19 @@
       options.desc = "Sidekick CLI Close";
     }
     {
-      mode = [ "x" "n" ];
+      mode = [
+        "x"
+        "n"
+      ];
       key = "<leader>at";
       action.__raw = ''function() require("sidekick.cli").send({ msg = "{file}" }) end'';
       options.desc = "Sidekick Send This";
     }
     {
-      mode = [ "x" "n" ];
+      mode = [
+        "x"
+        "n"
+      ];
       key = "<leader>av";
       action.__raw = ''function() require("sidekick.cli").send({ msg = "{selection}" }) end'';
       options.desc = "Sidekick Send Visual Selection";
@@ -91,30 +102,30 @@
       options.desc = "Sidekick Toggle Claude";
     }
     # NES (Next Edit Suggestion) keymaps
-    {
-      mode = "n";
-      key = "<leader>en";
-      action.__raw = ''function() require("sidekick.nes").jump() end'';
-      options.desc = "Sidekick NES Jump";
-    }
-    {
-      mode = "n";
-      key = "<leader>ea";
-      action.__raw = ''function() require("sidekick.nes").apply() end'';
-      options.desc = "Sidekick NES Apply";
-    }
-    {
-      mode = "n";
-      key = "<leader>ec";
-      action.__raw = ''function() require("sidekick.nes").clear() end'';
-      options.desc = "Sidekick NES Clear";
-    }
-    {
-      mode = "n";
-      key = "<leader>et";
-      action.__raw = ''function() require("sidekick.nes").toggle() end'';
-      options.desc = "Sidekick NES Toggle";
-    }
+    #{
+    #      mode = "n";
+    #      key = "<leader>en";
+    #      action.__raw = ''function() require("sidekick.nes").jump() end'';
+    #      options.desc = "Sidekick NES Jump";
+    #    }
+    #    {
+    #      mode = "n";
+    #      key = "<leader>ea";
+    #      action.__raw = ''function() require("sidekick.nes").apply() end'';
+    #      options.desc = "Sidekick NES Apply";
+    #    }
+    #    {
+    #      mode = "n";
+    #      key = "<leader>ec";
+    #      action.__raw = ''function() require("sidekick.nes").clear() end'';
+    #      options.desc = "Sidekick NES Clear";
+    #    }
+    #    {
+    #      mode = "n";
+    #      key = "<leader>et";
+    #      action.__raw = ''function() require("sidekick.nes").toggle() end'';
+    #      options.desc = "Sidekick NES Toggle";
+    #    }
   ];
 
 }
