@@ -20,10 +20,18 @@
           "gofumpt"
           "golines"
         ];
+        html = [ "prettier" ];
+        css = [ "prettier" ];
+        javascript = [ "prettier" ];
+        javascriptreact = [ "prettier" ];
+        typescript = [ "prettier" ];
+        typescriptreact = [ "prettier" ];
         json = [ "prettier" ];
         lua = [ "stylua" ];
         markdown = [ "prettier" ];
         nix = [ "nixfmt" ];
+        php = [ "php_cs_fixer" ];
+        blade = [ "blade-formatter" ];
         python = [
           "isort"
           "black"
@@ -56,6 +64,8 @@
         };
         prettier.command = lib.getExe pkgs.nodePackages.prettier;
         shfmt.command = lib.getExe pkgs.shfmt;
+        php_cs_fixer.command = lib.getExe pkgs.phpPackages.php-cs-fixer;
+        blade-formatter.command = lib.getExe pkgs.blade-formatter;
         squeeze_blanks.command = lib.getExe' pkgs.coreutils "cat";
         stylua = {
           command = lib.getExe pkgs.stylua;

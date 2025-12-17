@@ -31,12 +31,65 @@
       # terraform
       ".*%.tf" = "terraform";
       "terraform.tfstate.*" = "json";
+
+      # blade templates
+      ".*%.blade%.php" = "blade";
     };
 
   };
 
   extraFiles = {
     "after/ftplugin/markdown.lua".text = # lua
+      ''
+        local o = vim.opt
+        o.expandtab = true
+        o.shiftwidth = 2
+        o.smarttab = true
+        o.softtabstop = 2
+        o.tabstop = 2
+      '';
+
+    "after/ftplugin/javascript.lua".text = # lua
+      ''
+        local o = vim.opt
+        o.expandtab = true
+        o.shiftwidth = 2
+        o.smarttab = true
+        o.softtabstop = 2
+        o.tabstop = 2
+      '';
+
+    "after/ftplugin/typescript.lua".text = # lua
+      ''
+        local o = vim.opt
+        o.expandtab = true
+        o.shiftwidth = 2
+        o.smarttab = true
+        o.softtabstop = 2
+        o.tabstop = 2
+      '';
+
+    "after/ftplugin/php.lua".text = # lua
+      ''
+        local o = vim.opt
+        o.expandtab = true
+        o.shiftwidth = 4
+        o.smarttab = true
+        o.softtabstop = 4
+        o.tabstop = 4
+      '';
+
+    "after/ftplugin/blade.lua".text = # lua
+      ''
+        local o = vim.opt
+        o.expandtab = true
+        o.shiftwidth = 4
+        o.smarttab = true
+        o.softtabstop = 4
+        o.tabstop = 4
+      '';
+
+    "after/ftplugin/html.lua".text = # lua
       ''
         local o = vim.opt
         o.expandtab = true

@@ -8,6 +8,10 @@
     hadolint
     markdownlint-cli
     mypy
+    nodePackages.eslint
+    nodePackages.stylelint
+    php
+    phpPackages.phpstan
     shellcheck
     statix
     tfsec
@@ -30,19 +34,26 @@
     lintersByFt = {
       "yaml.gh_actions" = [ "actionlint" ];
       bash = [ "shellcheck" ];
+      css = [ "stylelint" ];
       docker = [ "hadolint" ];
       fish = [ "fish" ];
       go = [ "golangcilint" ];
+      html = [ "htmlhint" ];
+      javascript = [ "eslint" ];
+      javascriptreact = [ "eslint" ];
       markdown = [ "markdownlint" ];
       nix = [
         "deadnix"
         "statix"
       ];
+      php = [ "phpstan" ];
       python = [ "mypy" ];
       terraform = [
         "terraform_validate"
         "tfsec"
       ];
+      typescript = [ "eslint" ];
+      typescriptreact = [ "eslint" ];
       yaml = [ "yamllint" ];
     };
 

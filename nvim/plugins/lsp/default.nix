@@ -25,6 +25,9 @@
   extraPackages = with pkgs; [
     nodejs
     ansible-lint
+    php
+    phpactor
+    blade-formatter
   ];
 
   plugins = {
@@ -49,6 +52,20 @@
         pylsp.enable = true;
         ruby_lsp.enable = true;
         ruff.enable = true;
+        
+        # web development
+        tsserver.enable = true;
+        html.enable = true;
+        cssls.enable = true;
+        tailwindcss.enable = true;
+        
+        # php
+        phpactor = {
+          enable = true;
+          package = pkgs.phpactor;
+        };
+        
+        # blade (Laravel) - handled by html server with additional configuration
 
         # devops
         ansiblels = {
@@ -87,6 +104,16 @@
       map("n", "<leader>lR", "<Cmd>lua vim.lsp.buf.references()<CR>", { desc = "LSP references" })
       map("n", "<leader>lD", "<Cmd>lua vim.lsp.buf.definition()<CR>", { desc = "LSP definition" })
       map("n", "<leader>li", "<Cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "LSP implementation" })
+
+      -- Blade template support
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "blade",
+        callback = function()
+          vim.opt_local.commentstring = "{# %s #}"
+        end,
+      })
+
+
     '';
 
 }
