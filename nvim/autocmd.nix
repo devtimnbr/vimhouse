@@ -29,6 +29,13 @@
           vim.fn.system { "kitty", "@", "set-tab-title", vim.fn.expand "%:t" }
         end,
       })
+
+      vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+        desc = "Auto reload buffer when file has changed externally",
+        callback = function()
+          vim.cmd "silent! checktime"
+        end,
+      })
     '';
 
 }
