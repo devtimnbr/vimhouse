@@ -23,13 +23,6 @@
         end,
       })
 
-      vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "BufWritePost" }, {
-        desc = "Update kitty tab title with current filename",
-        callback = function()
-          vim.fn.system { "kitty", "@", "set-tab-title", vim.fn.expand "%:t" }
-        end,
-      })
-
       vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
         desc = "Auto reload buffer when file has changed externally",
         callback = function()
