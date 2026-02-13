@@ -8,10 +8,14 @@
 
     nixvim = {
       url = "github:nix-community/nixvim";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # used for nixd
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-config.url = "github:atimofeev/nixos-config";
   };
 
@@ -29,6 +33,8 @@
         "x86_64-darwin"
         "aarch64-darwin"
       ];
+
+      flake.nixvimModules.default = import ./nvim;
 
       perSystem =
         { pkgs, system, ... }:

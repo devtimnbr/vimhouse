@@ -1,7 +1,10 @@
-{
+{ config, lib, ... }:
 
-  # Enable multiple colorschemes for the picker
-  colorschemes = {
+let
+  stylixEnabled = config.stylix.enable or false;
+in
+{
+  colorschemes = lib.mkIf (!stylixEnabled) {
     gruvbox = {
       enable = true;
       settings = {
@@ -16,7 +19,5 @@
     rose-pine.enable = true;
   };
 
-  # Default to gruvbox (will be overridden at runtime if saved)
-  colorscheme = "gruvbox";
-
+  colorscheme = lib.mkIf (!stylixEnabled) "gruvbox";
 }
